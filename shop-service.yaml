@@ -1,0 +1,7 @@
+server:
+    port: 8082
+
+aws:
+    s3:
+        bucket: bucket
+        host: http://localstack:4566

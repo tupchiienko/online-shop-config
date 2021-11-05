@@ -1,0 +1,24 @@
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://postgres-db:5432/online_shop_db
+        username: postgres
+        password: postgres
+    jpa:
+        hibernate:
+            ddl-auto: none
+
+eureka:
+    instance:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+        registryFetchIntervalSeconds: 5
+        instanceInfoReplicationIntervalSeconds: 5
+        initialInstanceInfoReplicationIntervalSeconds: 5
+        serviceUrl:
+            defaultZone: http://discoveryUser:discoveryPassword@discovery-service:8761/eureka/
+
+security:
+    jwt:
+        secret: secretword
+        expiration: 86400
